@@ -1,0 +1,13 @@
+IS_DEVELOPING      = False
+IS_BUILDING_DOCKER = False
+
+# Port
+API_PORT = 8888
+APP_PORT = 9999
+
+# Host
+API_HOST = "127.0.0.1"
+APP_HOST = "127.0.0.1"
+if IS_BUILDING_DOCKER:
+    API_HOST = "0.0.0.0"
+    APP_HOST = "0.0.0.0"
