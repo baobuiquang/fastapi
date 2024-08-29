@@ -1,5 +1,6 @@
 # Install
 Auto: Run `run.bat`
+
 Manual:
 ```
 pip install fastapi uvicorn
@@ -9,6 +10,7 @@ pip install fastapi uvicorn
 
 ### Run API+APP (Production):
 Method 1: Run `run.bat`
+
 Method 2:
 ```
 _config.IS_DEVELOPING = False
@@ -35,4 +37,5 @@ Dev: VSCode Live Server
 
 # Auto API Docs
 http://localhost:8888/docs
+
 http://localhost:8888/redoc
