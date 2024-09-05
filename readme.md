@@ -16,6 +16,7 @@ _config.IS_DEVELOPING = True
 
 Run API (Hot reload):
 ```
+venv\Scripts\activate
 uvicorn main:app --reload --host 127.0.0.1 --port 8888
 ```
 

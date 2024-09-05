@@ -1,5 +1,11 @@
-IS_BUILDING_DOCKER = False
-IS_DEVELOPING      = False
+# IS_BUILDING_DOCKER = False
+# IS_DEVELOPING      = False
+
+# IS_BUILDING_DOCKER = True
+# IS_DEVELOPING      = False
+
+# IS_BUILDING_DOCKER = False
+# IS_DEVELOPING      = True
 
 # Port
 API_PORT = 8888
