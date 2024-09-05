@@ -1,41 +1,80 @@
-# Install
-Auto: Run `run.bat`
+# FastAPI Boilerplate
 
-Manual:
-```
-pip install fastapi uvicorn
-```
+## Installation
 
-# Usage
+Run `run.bat` 
 
-### Run API+APP (Production):
-Method 1: Run `run.bat`
+(Automatically create virtual environment, install dependencies, and run `run.py`)
 
-Method 2:
+## Development
+
+Config:
 ```
-_config.IS_DEVELOPING = False
-py run.py
-```
-### Run API
-Production:
-```
-_config.IS_DEVELOPING = False
-py main.py
-```
-Dev:
-```
+_config.IS_BUILDING_DOCKER = False
 _config.IS_DEVELOPING = True
+```
+
+Run API (Hot reload):
+```
 uvicorn main:app --reload --host 127.0.0.1 --port 8888
 ```
 
-### Run APP
-Production:
-```
-py -m http.server --directory app 9999 --bind 127.0.0.1
-```
-Dev: VSCode Live Server
+Run APP (Hot reload):
 
-# Auto API Docs
-http://localhost:8888/docs
+`VSCode Live Server`
 
-http://localhost:8888/redoc
+## Production
+
+### 1. Docker
+
+Config:
+```
+_config.IS_BUILDING_DOCKER = True
+_config.IS_DEVELOPING = False
+```
+
+Build:
+```
+docker build -t my-fastapi-app .
+```
+
+Run:
+```
+docker run -p 8888:8888 -p 9999:9999 my-fastapi-app
+```
+
+### 2. Batch
+
+Config:
+```
+_config.IS_BUILDING_DOCKER = False
+_config.IS_DEVELOPING = False
+```
+
+Run:
+`run.bat`
+
+### 3. Manual
+
+Config:
+```
+_config.IS_BUILDING_DOCKER = False
+_config.IS_DEVELOPING = False
+```
+
+Run:
+```
+venv\Scripts\activate
+py run.py
+```
+
+## Quicklinks
+
+### Auto-generated API Docs
+* http://localhost:8888/docs
+* http://localhost:8888/redoc
+
+### Test Boilerplate
+* http://localhost:8888/path_1/?input_text_1=TYPE_INPUT_HERE_1
+* http://localhost:8888/path_2/TYPE_INPUT_HERE_2
+* http://localhost:9999 (Open console log)

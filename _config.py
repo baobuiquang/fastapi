@@ -1,5 +1,5 @@
-IS_DEVELOPING      = False
 IS_BUILDING_DOCKER = False
+IS_DEVELOPING      = False
 
 # Port
 API_PORT = 8888
