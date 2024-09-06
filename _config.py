@@ -1,9 +1,12 @@
-# IS_BUILDING_DOCKER = False
-# IS_DEVELOPING      = False
+# # Prod (Batch)
+IS_BUILDING_DOCKER = False
+IS_DEVELOPING      = False
 
+# # Prod (Docker)
 # IS_BUILDING_DOCKER = True
 # IS_DEVELOPING      = False
 
+# # Dev
 # IS_BUILDING_DOCKER = False
 # IS_DEVELOPING      = True
 
