@@ -34,9 +34,19 @@ _config.IS_BUILDING_DOCKER = True
 _config.IS_DEVELOPING = False
 ```
 
-Build:
+Build image:
 ```
 docker build -t my-fastapi-app .
+```
+
+Save image (Optional):
+```
+docker save -o my-fastapi-app-image.tar my-fastapi-app
+```
+
+Load image (Optional):
+```
+docker load -i my-fastapi-app-image.tar
 ```
 
 Run:
