@@ -86,6 +86,7 @@ py run.py
 * http://localhost:8888/redoc
 
 ### Test Boilerplate
-* http://localhost:8888/path_1/?input_text_1=TYPE_INPUT_HERE_1
-* http://localhost:8888/path_2/TYPE_INPUT_HERE_2
-* http://localhost:9999 (Open console log)
+* API: http://localhost:8888/path_1/?input_text_1=TYPE_INPUT_HERE_1
+* API: http://localhost:8888/path_2/TYPE_INPUT_HERE_2
+* APP: http://localhost:8888/app (Open console log)
+* APP: http://localhost:9999 (Open console log)
