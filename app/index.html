@@ -4,17 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Boilerplate</title>
+    <title>FastAPI Boilerplate Test</title>
 </head>
 
 <body>
+    <h1>==================================================</h1>
+
+    <h1 id="myh1">
+        ⚠️ Not Working ⚠️
+    </h1>
     <script>
         fetch("http://localhost:8888/path_1/?input_text_1=HELLYEAH!!!!!").then((Response) => {
             return Response.json()
         }).then((data) => {
             console.log(data);
+            document.getElementById("myh1").innerHTML = "It's working: " + data['message_1'];
         })
     </script>
+
+    <h1>==================================================</h1>
+
+    <input type="file" id="fileInput" accept="image/jpeg, image/png">
+    <button onclick="uploadImage()">Upload and Process</button>
+    <h1 id="myresponse"></h1>
+    <script>
+        async function uploadImage() {
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            if (!file) {
+                document.getElementById('myresponse').innerText = "⚠️ Please select a file first.";
+                return;
+            }
+            const formData = new FormData();
+            formData.append("file", file);
+            try {
+                const response = await fetch("http://localhost:8888/imageinfo", {
+                    method: "POST",
+                    body: formData
+                });
+                const result = await response.json();
+                if (result.error) {
+                    document.getElementById('myresponse').innerText = "Error: " + result.error;
+                } else {
+                    document.getElementById('myresponse').innerText = `Width: ${result.width}, Height: ${result.height}`;
+                }
+            } catch (error) {
+                document.getElementById('myresponse').innerText = "❌ An error occurred while uploading the image.";
+            }
+        }
+    </script>
+
+    <h1>==================================================</h1>
 </body>
 
 </html>
